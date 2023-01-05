@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <title>This is my portfolio</title>
+
+    <style>
+      #mycanvas {
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+      }
+      #canvas-h1 {
+          color:white;
+          position:absolute;
+      }
+    </style>
+
+    <script>
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+  </head>
+
+  <body>
+    
+
+
+   <h1>Portfolio</h1>
+   <h3> Hi, I'm Kozen. </h3>
+
+    <p> These are the topics I care deeply about,
+        the Greater Good of Humanity in terms of philosphy, education, and sustainability.
+        I'm a curious person and I like to learn about anything that interests me and that's a lot!</p>
+        <p> I've build this entire site using HTML, CSS, Python, and Django.  </p>
+
+
+      <div> 
+      
+      </div>
+
+
+
+        <h4> Here is my skill list - Number Rating - and what I can comfortably do in it </h4>
+        <table border="1">
+          <tr>
+            <th> Skill </th>
+            <th> Level 1-10 </th>
+            <th> Description of Skill</th>
+            <th> Description of My Ability</th>
+          </tr>
+          <tr>
+            <td> Environmental Design </td>
+            <td> 8 </td>
+            <td> Designs Environments such as Trade Shows, Events, Retail, Concerts </td>
+            <td> Highly skilled in Rendering, 3D Modeling, and Minimalist Displays and Furniture</td>
+          </tr>
+          <tr>
+            <td> Industrial Design </td>
+            <td> 8 </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> Python </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> Data Analysis </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+
+        </table>
+
+        <form enctype="multipart/form-data" action="{% url 'images' %}" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type="submit">submit</button>
+
+
+        </form>
+
+
+
+
+{% endblock %}
